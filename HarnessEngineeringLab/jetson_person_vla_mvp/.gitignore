@@ -1,0 +1,11 @@
+build/
+captures/
+*.engine
+*.onnx
+*.plan
+*.log
+*.mp4
+*.avi
+*.mkv
+!models/README.md
+
