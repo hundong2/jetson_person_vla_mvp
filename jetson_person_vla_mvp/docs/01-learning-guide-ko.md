@@ -36,12 +36,3 @@
 
 사람을 식별하는 시스템은 반드시 동의, 고지, 보관 기간, 접근 권한, 삭제 절차를 함께 설계해야 합니다.
 
-## 5. 전문가 관점의 확장 방향
-
-- 감지: YOLOv8n ONNX에서 TensorRT 엔진으로 전환합니다.
-- 추적: ByteTrack 또는 DeepSORT를 붙입니다.
-- 식별: person re-identification 모델 OSNet 계열을 검토합니다.
-- VLA: 장면 상태를 JSON으로 만들고 LLM 또는 규칙 엔진에 넘깁니다.
-- 로봇: ROS 2 topic 또는 serial command로 action을 내보냅니다.
-- 운영: FPS, 지연 시간, 모델 버전, 카메라 설정을 로그로 남깁니다.
-

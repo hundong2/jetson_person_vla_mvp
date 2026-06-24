@@ -31,12 +31,3 @@
 - ActionPolicy를 ROS 2 command publisher로 교체
 - 사람이 승인한 action만 실제 장치로 출력
 
-## Phase 5: 운영 품질
-
-- systemd service
-- watchdog
-- structured logs
-- health endpoint
-- 모델/설정 버전 기록
-- 개인정보 삭제 명령
-

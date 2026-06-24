@@ -34,7 +34,6 @@ std::pair<std::string, double> IdentityStore::identify(const cv::Mat& frame, con
         return {"unknown", 0.0};
     }
 
-    // Correlation ranges roughly from -1 to 1. Map it to an easier confidence-like value.
     const double correlation = cv::compareHist(profile_->histogram, candidate, cv::HISTCMP_CORREL);
     const double score = std::max(0.0, std::min(1.0, (correlation + 1.0) / 2.0));
     return score >= 0.78 ? std::make_pair(profile_->label, score) : std::make_pair(std::string("unknown"), score);
@@ -66,3 +65,4 @@ cv::Mat IdentityStore::build_histogram(const cv::Mat& frame, const cv::Rect& per
 }
 
 }  // namespace person_vla
+

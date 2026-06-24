@@ -22,11 +22,3 @@ Build a C++ OpenCV project that runs on desktop Linux, Jetson Nano, and Jetson O
 - Runtime smoke check: `./build/person_vla --source 0`
 - Jetson CSI check: `./scripts/run_jetson_csi.sh`
 
-## Next Enhancements
-
-- Replace histogram identity with a proper person re-identification embedding model.
-- Export YOLO to TensorRT for Jetson Orin.
-- Add robot control output through ROS 2 or serial protocol.
-- Add structured JSON logging for experiment comparison.
-- Add privacy controls: profile expiration, encryption, and consent logs.
-

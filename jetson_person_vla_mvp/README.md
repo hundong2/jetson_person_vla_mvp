@@ -25,6 +25,7 @@ jetson_person_vla_mvp/
     04-safety-and-privacy-ko.md
     05-development-roadmap-ko.md
   include/person_vla/
+  models/README.md
   plans/mvp-plan.md
   todo.md
   scripts/
@@ -46,7 +47,7 @@ sudo apt install -y build-essential cmake pkg-config libopencv-dev
 Build:
 
 ```bash
-cd HarnessEngineeringLab/jetson_person_vla_mvp
+cd jetson_person_vla_mvp
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build -j$(nproc)
 ```
@@ -102,3 +103,4 @@ The project demonstrates a practical harness loop:
 3. Make risky runtime behavior observable through logs and on-frame overlays.
 4. Add test seams for logic that can be validated without a camera.
 5. Verify on desktop first, then Jetson USB camera, then Jetson CSI camera.
+

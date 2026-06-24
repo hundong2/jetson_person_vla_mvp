@@ -1,8 +1,8 @@
 #include "person_vla/AppConfig.hpp"
 
+#include <cstdlib>
 #include <iostream>
 #include <stdexcept>
-#include <cstdlib>
 
 namespace person_vla {
 
@@ -63,3 +63,4 @@ AppConfig parse_args(int argc, char** argv) {
 }
 
 }  // namespace person_vla
+

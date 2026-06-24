@@ -43,8 +43,6 @@ PersonDetector::PersonDetector(const AppConfig& config) : config_(config) {
         using_dnn_ = !net_.empty();
 
         if (using_dnn_ && config_.prefer_cuda) {
-            // Jetson OpenCV packages vary. If CUDA DNN is unavailable, OpenCV throws later;
-            // the app catches that and continues with the CPU backend.
             try {
                 net_.setPreferableBackend(cv::dnn::DNN_BACKEND_CUDA);
                 net_.setPreferableTarget(cv::dnn::DNN_TARGET_CUDA);
@@ -86,7 +84,6 @@ std::vector<Detection> PersonDetector::detect_with_dnn(const cv::Mat& frame) {
     net_.setInput(blob);
     cv::Mat output = net_.forward();
 
-    // YOLOv8 ONNX commonly returns [1, 84, N]. This block transposes it to [N, 84].
     if (output.dims == 3 && output.size[1] < output.size[2]) {
         output = output.reshape(1, output.size[1]);
         cv::transpose(output, output);
@@ -120,8 +117,6 @@ std::vector<Detection> PersonDetector::detect_with_dnn(const cv::Mat& frame) {
         const int class_id = class_id_point.x;
         const std::string class_name =
             class_id >= 0 && class_id < static_cast<int>(class_names_.size()) ? class_names_[class_id] : "";
-
-        // COCO class 0 is person. If a classes file is present, also accept the explicit name.
         const float confidence = objectness * static_cast<float>(max_class_score);
         const bool is_person = class_id == 0 || class_name == "person";
         if (!is_person || confidence < config_.confidence_threshold) {
@@ -168,3 +163,4 @@ std::vector<Detection> PersonDetector::detect_with_hog(const cv::Mat& frame) {
 }
 
 }  // namespace person_vla
+

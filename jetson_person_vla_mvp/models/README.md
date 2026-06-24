@@ -10,20 +10,5 @@ models/
   coco.names
 ```
 
-Example `coco.names`:
-
-```text
-person
-bicycle
-car
-motorcycle
-airplane
-bus
-train
-truck
-boat
-traffic light
-```
-
 The MVP filters to COCO class `person`. Keep large model binaries out of git unless your project policy explicitly allows them.
 

@@ -31,7 +31,6 @@ cv::VideoCapture open_source(const std::string& source) {
         return cv::VideoCapture(std::stoi(source));
     }
 
-    // GStreamer pipelines on Jetson are strings, so CAP_GSTREAMER is tried first.
     cv::VideoCapture capture(source, cv::CAP_GSTREAMER);
     if (!capture.isOpened()) {
         capture.open(source);
@@ -130,3 +129,4 @@ int main(int argc, char** argv) {
 
     return 0;
 }
+

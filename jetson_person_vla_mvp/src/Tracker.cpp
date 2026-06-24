@@ -1,7 +1,6 @@
 #include "person_vla/Tracker.hpp"
 
 #include <algorithm>
-#include <limits>
 
 namespace person_vla {
 

@@ -1,5 +1,3 @@
-# Reference runtime settings. The MVP currently accepts the same values through CLI.
-# Keep this file as a runbook for experiments and future config parsing.
 source: "0"
 model: "./models/yolov8n.onnx"
 classes: "./models/coco.names"
